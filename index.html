@@ -16,53 +16,85 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/bootstrap-4.5.3-dist/css/bootstrap.min.css">
   <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/scrolling-nav.css">
+
+  <!-- Vendor css -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
 
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
   <script type="text/javascript" src="assets/js/tableau.js"></script>
+  <script src="assets/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
 </head>
 
-<body onload="initViz();">
+<body id="page-top">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-xl-10 d-flex align-items-center justify-content-end">
-          <h1 class="logo mr-auto"><a href="index.html">FisheriesViz</a></h1>
-          <nav class="nav-menu d-none d-lg-block">
-            <ul>
-              <li class="active"><a href="#about">Home</a></li>
-              <li><a href="#datastory">Data Stories</a></li>
-              <li><a href="#dataset">Dataset</a></li>
-              <li><a href="quiz.html">Take a Quiz</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header><!-- End Header -->
-
-
-  <main id="main">
-
-    <!-- ======= Home Section ======= -->
-    <section id="about" class="about">
-      <div class="container-fluid">
-            <div class="row justify-content-md-center">
-              <div class="col-md-auto">
-                <img src="assets/img/fishery.jpg" alt="Fishermen working with fishing net">
-                <p class="lead large">Narrative Visualization of statistical data and User study to understand mediums of interaction</p>
-                <div class="introtext">
-                  <p class="lead">
-                  Our project uses various mediums to tell stories and perform user study to understand which methods help users' to engage in a context.
-                  </p>
-                </div>
+  <!-- ================ Instructions Modal =============== -->
+  <div id="myModal" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">Instructions</h5>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
+              <div class="modal-body">
+                  <p>Subscribe to our mailing list to get the latest updates straight in your inbox.</p>
               </div>
           </div>
-    </section>
-    <!-- ======= End Home Section ========= -->
+      </div>
+  </div>
+
+  <!-- End Modal -->
+
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">FisheriesViz</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="dashboard.html" target="_blank">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#datastory">Data Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#dataset">Dataset</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="https://forms.gle/QdLRYARFFW8Bk6Zw8" target="_blank">Take a Quiz!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="https://forms.gle/WmUm8kUtPgZ9oxsT7" target="_blank">Feedback</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Welcome to FisheriesViz</h1>
+      <img src="assets/img/fishery.jpg" alt="Fishermen working with fishing net">
+      <div class="introtext">
+        <p class="lead">
+        Our project uses various mediums to tell stories and perform user study to understand which methods help users' to engage in a context.
+        </p>
+      </div>
+    </div>
+  </header>
+<!-- End Navigation -->
+
+  <main id="main">
 
     <!-- ======= Data Story Section ======= -->
     <section id="datastory" class="datastory">
@@ -95,27 +127,35 @@
             </p>
           </div>
         </div>
-
+        <br>
+        <div class="section-title">
+          <h2>Data Plots</h2>
+        </div>
         <div class="row">
           <!-- Fisher-folk population -->
           <div class="col">
+            <p>Fisher Folk Population in Indian states</p>
             <div id="fisherfolk" style="height:400px; width:600px;"></div>
           </div>
 
           <!-- Frozen -->
           <div class="col">
+            <p>Disposition of Frozen Fish catch - India from 1990 to 2017</p>
             <div id="frozen" style="height:400px; width:600px;"></div>
           </div>
         </div>
-
+        <br>
         <div class="row">
           <!-- Market Fresh -->
           <div class="col">
+            <p>Disposition of Marketing Fresh Fish catch - India from 1990 to 2017</p>
             <div id="marketfresh" style="height:400px; width:600px;"></div>
           </div>
 
           <!-- Offal for Reduction -->
           <div class="col">
+            <p>Disposition of <a href="#" data-toggle="tooltip" title="the entrails and internal organs of an animal used as food">Offal</a>
+              for Reduction Fish catch - India from 1990 to 2017</p>
             <div id="offal" style="height:400px; width:600px;"></div>
           </div>
         </div>
@@ -123,6 +163,7 @@
         <div class="row">
           <!-- Reduction -->
           <div class="col">
+            <p>Disposition of Reduction Fish catch - India from 1990 to 2017</p>
             <div id="reduction" style="height:400px; width:600px;"></div>
           </div>
 
@@ -130,7 +171,6 @@
 
       </div>
     </section><!-- End Services Section -->
-
 
     <!-- ======= Dataset Section ======= -->
     <section id="dataset" class="dataset">
@@ -162,15 +202,14 @@
 
   </main><!-- End #main -->
 
-  <div id="preloader"></div>
-
  <!-- Vendor JS Files -->
  <script src="assets/vendor/jquery/jquery.min.js"></script>
  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+ <script src="assets/js/scrolling-nav.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!--<script src="assets/js/main.js"></script>-->
 
 </body>
 
