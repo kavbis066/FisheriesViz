@@ -78,3 +78,5 @@ function initViz() {
 
             var viz6 = new tableau.Viz(reduction, url, options);
         }
+
+$(document).ready(initViz);
