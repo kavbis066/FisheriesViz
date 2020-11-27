@@ -1,1 +1,1 @@
-# https://kavbis066.github.io/fisheriesviz/
+# https://fisheriesviz.netlify.app/
